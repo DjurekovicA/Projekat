@@ -49,9 +49,15 @@ namespace Recept1._0
         {
             Sastojci = s;
         }
+        public Class1(string nr, string tj, string r)
+        {
+            NazivRecepta = nr;
+            TipJela = tj;
+            Recept = r;
+        }
         public override string ToString()
         {
-            return base.ToString();
+            return NazivRecepta + ", " + TipJela;
         }
     }
 }

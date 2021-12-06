@@ -12,6 +12,7 @@ namespace Recept1._0
 {
     public partial class Recepti : Form
     {
+        private List<Class1> klasa = new List<Class1>();
         public Recepti()
         {
             InitializeComponent();
@@ -38,7 +39,11 @@ namespace Recept1._0
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            string NazivJela = textBox1.Text;
+            string TipJela = comboBox1.Text;
+            string Recept = textBox2.Text;
+            Class1 c = new Class1(NazivJela, TipJela, Recept);
+            listBox1.Items.Add(c.ToString());
         }
     }
 }
