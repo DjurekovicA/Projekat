@@ -45,5 +45,10 @@ namespace Recept1._0
             Class1 c = new Class1(NazivJela, TipJela, Recept);
             listBox1.Items.Add(c.ToString());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

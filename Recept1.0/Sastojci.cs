@@ -12,7 +12,8 @@ namespace Recept1._0
 {
     public partial class Sastojci : Form
     {
-        private List<Class1> klasa = new List<Class1>(); 
+        private static string sastojci = "";
+        Class1 c = new Class1(sastojci);
         public Sastojci()
         {
             InitializeComponent();
@@ -20,14 +21,12 @@ namespace Recept1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] sastojci = new string[20];
-            Class1 Sastojak = new Class1(sastojci);
-            for (int i = 0; i < klasa.Count; i++)
-            {
-                sastojci[i] = numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
-            }
+            if (sastojci == "")
+                sastojci = numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
+            else
+                sastojci += "\n " + numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
             listBox1.Items.Add(numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text);
-            klasa.Add(Sastojak);
+            c.SetSastojci(sastojci);   
         }
 
         private void button2_Click(object sender, EventArgs e)

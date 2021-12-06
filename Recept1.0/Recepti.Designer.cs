@@ -133,6 +133,7 @@
             this.button2.Size = new System.Drawing.Size(84, 32);
             this.button2.TabIndex = 4;
             this.button2.Text = "Pregledaj";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 

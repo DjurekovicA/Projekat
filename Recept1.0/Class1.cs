@@ -11,7 +11,7 @@ namespace Recept1._0
         private string NazivRecepta;
         private string Recept;
         private string TipJela;
-        private string[] Sastojci = new string[20];
+        private string Sastojci;
         public string GetNazivRecepta()
         {
             return NazivRecepta;
@@ -36,16 +36,16 @@ namespace Recept1._0
         {
             TipJela = a;
         }
-        public string[] GetSastojci()
+        public string GetSastojci()
         {
             return Sastojci;
         }
-        public void SetSastojci(string[] a)
+        public void SetSastojci(string a)
         {
             Sastojci = a;
         }
 
-        public Class1(string[] s)
+        public Class1(string s)
         {
             Sastojci = s;
         }
