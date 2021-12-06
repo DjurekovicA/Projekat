@@ -23,5 +23,12 @@ namespace Recept1._0
             r.Show();
             this.Hide();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
+    
+

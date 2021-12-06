@@ -60,6 +60,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(166, 118);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(100, 26);
             this.numericUpDown1.TabIndex = 2;
@@ -67,6 +72,12 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "g",
+            "kg",
+            "ml",
+            "l",
+            "kom."});
             this.comboBox1.Location = new System.Drawing.Point(166, 158);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 28);
@@ -145,6 +156,7 @@
             this.Name = "Sastojci";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sastojci";
+            this.Load += new System.EventHandler(this.Sastojci_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
