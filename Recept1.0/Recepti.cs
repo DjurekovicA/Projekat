@@ -20,7 +20,7 @@ namespace Recept1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Sastojci sastojci = new Sastojci();
+            Sastojci sastojci = new Sastojci(0);
             sastojci.Show();
             this.Close();
         }
@@ -48,7 +48,9 @@ namespace Recept1._0
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Sastojci sastojci = new Sastojci(1);
+            sastojci.Show();
+            this.Close();
         }
     }
 }
