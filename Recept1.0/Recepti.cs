@@ -42,7 +42,8 @@ namespace Recept1._0
             string NazivJela = textBox1.Text;
             string TipJela = comboBox1.Text;
             string Recept = textBox2.Text;
-            Class1 c = new Class1(NazivJela, TipJela, Recept);
+            List<string> sastojak = Sastojci.sastojak;
+            Class1 c = new Class1(NazivJela, TipJela, Recept, sastojak);
             listBox1.Items.Add(c.ToString());
         }
 

@@ -12,6 +12,7 @@ namespace Recept1._0
         private string Recept;
         private string TipJela;
         private string Sastojci;
+        private List<string> Sastojak = new List<string>();
         public string GetNazivRecepta()
         {
             return NazivRecepta;
@@ -44,16 +45,28 @@ namespace Recept1._0
         {
             Sastojci = a;
         }
-
+        public List<string> GetSastojak()
+        {
+            return Sastojak;
+        }
+        public void SetSastojak(List<string> a)
+        {
+            Sastojak = a;
+        }
         public Class1(string s)
         {
             Sastojci = s;
         }
-        public Class1(string nr, string tj, string r)
+        public Class1(List<string> s)
+        {
+            Sastojak = s;
+        }
+        public Class1(string nr, string tj, string r, List<string> s)
         {
             NazivRecepta = nr;
             TipJela = tj;
             Recept = r;
+            Sastojak = s;
         }
         public override string ToString()
         {

@@ -13,7 +13,7 @@ namespace Recept1._0
     public partial class Sastojci : Form
     {
         private static string sastojci = "";
-        string[] sastojak = new string[20];
+        public static List<string> sastojak = new List<string>();
         Class1 class1 = new Class1(sastojci);
         int C;
         public Sastojci(int c)
@@ -33,6 +33,7 @@ namespace Recept1._0
             for (int i = 0;i< comboBox1.Items.Count;i++)
             {
                 sastojak[i] = numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
+                //class1.SetSastojak();
             }
         }
 
@@ -43,8 +44,10 @@ namespace Recept1._0
             this.Close();
         }
 
-        private void Sastojci_Load(object sender, EventArgs e)
+        public void Sastojci_Load(object sender, EventArgs e)
         {
+            List<string> sastojak = new List<string>();
+            Class1 class1 = new Class1(sastojak);
             if (C == 0)
             {
                 textBox1.Show();
@@ -72,7 +75,7 @@ namespace Recept1._0
                 listBox1.Hide();
                 listBox2.Show();
                 for (int i = 0; i < 20; i++)
-                    listBox2.Items.Add(sastojak[i]);
+                    listBox2.Items.Add(sastojak);
             }
 
         }
