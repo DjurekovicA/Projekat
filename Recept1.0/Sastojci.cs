@@ -30,11 +30,11 @@ namespace Recept1._0
                 sastojci += "\n " + numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
             listBox1.Items.Add(numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text);
             class1.SetSastojci(sastojci);
-            for (int i = 0;i< comboBox1.Items.Count;i++)
-            {
-                sastojak[i] = numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
-                //class1.SetSastojak();
-            }
+           
+            
+                sastojak.Add(numericUpDown1.Value + " " + comboBox1.SelectedItem.ToString() + " " + textBox1.Text);
+                class1.SetSastojak(sastojak);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,10 +43,10 @@ namespace Recept1._0
             recepti.Show();
             this.Close();
         }
-
+       
         public void Sastojci_Load(object sender, EventArgs e)
         {
-            List<string> sastojak = new List<string>();
+            
             Class1 class1 = new Class1(sastojak);
             if (C == 0)
             {
@@ -74,8 +74,11 @@ namespace Recept1._0
                 button1.Hide();
                 listBox1.Hide();
                 listBox2.Show();
-                for (int i = 0; i < 20; i++)
-                    listBox2.Items.Add(sastojak);
+                for (int i = 0; i < sastojak.Count; i++) 
+                {
+                        
+                        listBox2.Items.Add(class1.GetSastojci());
+                }
             }
 
         }
