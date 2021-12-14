@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Recept1._0
 {
-    internal class Class1
+    class Class1
     {
         private string NazivRecepta;
         private string Recept;

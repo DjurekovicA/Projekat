@@ -12,7 +12,7 @@ namespace Recept1._0
 {
     public partial class Recepti : Form
     {
-        private List<Class1> klasa = new List<Class1>();
+        private List<string> recept = new List<string>();
         public Recepti()
         {
             InitializeComponent();

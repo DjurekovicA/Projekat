@@ -12,9 +12,8 @@ namespace Recept1._0
 {
     public partial class Sastojci : Form
     {
-        private static string sastojci = "";
         public static List<string> sastojak = new List<string>();
-        Class1 class1 = new Class1(sastojci);
+        Class1 class1 = new Class1(sastojak);
         int C;
         public Sastojci(int c)
         {
@@ -24,16 +23,10 @@ namespace Recept1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (sastojci == "")
-                sastojci = numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
-            else
-                sastojci += "\n " + numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
-            listBox1.Items.Add(numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text);
-            class1.SetSastojci(sastojci);
-           
-            
-                sastojak.Add(numericUpDown1.Value + " " + comboBox1.SelectedItem.ToString() + " " + textBox1.Text);
-                class1.SetSastojak(sastojak);
+            string s = numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
+            listBox1.Items.Add(s);
+            sastojak.Add(s);
+            class1.SetSastojak(sastojak);
             
         }
 
@@ -47,7 +40,7 @@ namespace Recept1._0
         public void Sastojci_Load(object sender, EventArgs e)
         {
             
-            Class1 class1 = new Class1(sastojak);
+            //Class1 class1 = new Class1(sastojak);
             if (C == 0)
             {
                 textBox1.Show();
@@ -76,8 +69,7 @@ namespace Recept1._0
                 listBox2.Show();
                 for (int i = 0; i < sastojak.Count; i++) 
                 {
-                        
-                        listBox2.Items.Add(class1.GetSastojci());
+                    listBox2.Items.Add(sastojak[i]);
                 }
             }
 
