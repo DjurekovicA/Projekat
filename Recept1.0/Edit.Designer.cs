@@ -1,6 +1,6 @@
 ﻿namespace Recept1._0
 {
-    partial class Recepti
+    partial class Edit
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.btnNazad = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNazad
@@ -171,8 +169,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(235, 46);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Dodaj recept";
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Text = "Izmeni recept";
             // 
             // textBox3
             // 
@@ -202,21 +199,11 @@
             this.listBox2.Size = new System.Drawing.Size(234, 64);
             this.listBox2.TabIndex = 14;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(373, 440);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 46);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Edit";
-            // 
-            // Recepti
+            // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 510);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox3);
@@ -235,28 +222,10 @@
             this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Recepti";
+            this.Name = "Edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Recepti_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
-
-
-
-
-            
-            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click);
-            
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-           
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            
-
         }
 
         #endregion
@@ -276,6 +245,5 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button4;
     }
 }
