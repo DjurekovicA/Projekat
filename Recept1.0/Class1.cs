@@ -53,10 +53,7 @@ namespace Recept1._0
         {
             Sastojak = a;
         }
-        public Class1(string s)
-        {
-            Sastojci = s;
-        }
+        public Class1() { }
         public Class1(List<string> s)
         {
             Sastojak = s;

@@ -13,34 +13,56 @@ namespace Recept1._0
     public partial class Sastojci : Form
     {
         public static List<string> sastojak = new List<string>();
+        public static List<string> a = new List<string>();
         Class1 class1 = new Class1(sastojak);
         int C;
-        public Sastojci(int c)
+        string Nz;
+        string Tj;
+        string R;
+        public Sastojci(int c = 0, string nz = "", string tj = "", string r = "")
         {
             C = c;
+            Nz = nz;
+            Tj = tj;
+            R = r;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (a.Contains(textBox1.Text)) {
+                MessageBox.Show("Već ste dodali ovaj sastojak");
+                return;
+            }
+
+            if (textBox1.Text == "")
+                return;
+            if (numericUpDown1.Value == 0)
+                return;
+            if (comboBox1.Text == "")
+                return;
+
             string s = numericUpDown1.Value + " " + comboBox1.Text + " " + textBox1.Text;
+            a.Add(textBox1.Text);
             listBox1.Items.Add(s);
             sastojak.Add(s);
             class1.SetSastojak(sastojak);
+
+            textBox1.Text = "";
+            numericUpDown1.Value = 0;
+            comboBox1.ResetText();
             
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Recepti recepti = new Recepti();
+            Recepti recepti = new Recepti(Nz, Tj, R);
             recepti.Show();
             this.Close();
         }
        
         public void Sastojci_Load(object sender, EventArgs e)
         {
-            
-            //Class1 class1 = new Class1(sastojak);
             if (C == 0)
             {
                 textBox1.Show();
