@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.btnNazad = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.btnNazad.Size = new System.Drawing.Size(130, 60);
             this.btnNazad.TabIndex = 8;
             this.btnNazad.Text = "Nazad na početak";
+            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click);
             // 
             // btnExit
             // 
@@ -65,6 +65,7 @@
             this.btnExit.Size = new System.Drawing.Size(50, 50);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "X";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label1
             // 
@@ -126,6 +127,7 @@
             this.button1.Size = new System.Drawing.Size(43, 40);
             this.button1.TabIndex = 4;
             this.button1.Text = "+";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -135,6 +137,7 @@
             this.button2.Size = new System.Drawing.Size(43, 40);
             this.button2.TabIndex = 7;
             this.button2.Text = "-";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -163,6 +166,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(291, 344);
             this.listBox1.TabIndex = 8;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -210,6 +214,7 @@
             this.button4.Size = new System.Drawing.Size(91, 46);
             this.button4.TabIndex = 15;
             this.button4.Text = "Edit";
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // Recepti
             // 
@@ -240,22 +245,6 @@
             this.Load += new System.EventHandler(this.Recepti_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
-
-
-
-
-            
-            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click);
-            
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-           
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            
 
         }
 

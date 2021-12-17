@@ -13,8 +13,8 @@ namespace Recept1._0
     public partial class Recepti : Form
     {
         public static List<string> sastojak = new List<string>();
-        public static List<string> a = new List<string>();
-        private List<string> recept = new List<string>();
+        public static List<string> NaziviJela = new List<string>();
+        public List<Class1> recept = new List<Class1>();
         Class1 class1 = new Class1(sastojak);
         public Recepti()
         {
@@ -24,8 +24,7 @@ namespace Recept1._0
         //dodavanje sastojka
         private void button1_Click(object sender, EventArgs e)
         {
-            if (a.Contains(textBox3.Text))
-            {
+            if (NaziviJela.Contains(textBox3.Text)) {
                 MessageBox.Show("Već ste dodali ovaj sastojak");
                 textBox3.Text = "";
                 return;
@@ -35,7 +34,7 @@ namespace Recept1._0
                 return;
 
             string s = textBox3.Text.ToLower();
-            a.Add(s);
+            NaziviJela.Add(s);
             listBox2.Items.Add(s);
             sastojak.Add(s);
             class1.SetSastojak(sastojak);
@@ -62,7 +61,7 @@ namespace Recept1._0
             string TipJela = comboBox1.Text;
             string Recept = textBox2.Text;
 
-            if (a.Contains(NazivJela))
+            if (NaziviJela.Contains(NazivJela))
             {
                 MessageBox.Show("Imate već recept sa tim imenom");
                 return;
@@ -73,9 +72,9 @@ namespace Recept1._0
                 return;
             }
 
-            a.Add(NazivJela);
-            Class1 c = new Class1(NazivJela, TipJela, Recept, sastojak);
-            recept.Add(NazivJela + " " + TipJela + " " + sastojak + " " + Recept);
+            NaziviJela.Add(NazivJela);
+            Class1 c = new Class1(NazivJela, TipJela, sastojak, Recept);
+            recept.Add(c);
             listBox1.Items.Add(c.ToString());
             c.SetNazivRecepta(NazivJela);
             c.SetTipJelaa(TipJela);
@@ -85,14 +84,12 @@ namespace Recept1._0
             textBox1.Text = "";
             textBox2.Text = "";
             comboBox1.Text = "";
-            //listBox2.Items.Clear();
+            listBox2.Items.Clear();
             sastojak = new List<string>();
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            Edit f = new Edit(recept, listBox1.SelectedIndex);
-            f.Show();
-            this.Hide();
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -102,6 +99,34 @@ namespace Recept1._0
         private void Recepti_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button4.Show();
+
+            int r = listBox1.SelectedIndex;
+            for (int i = 0; i < recept.Count; i++)
+            {
+                Class1 n = recept[i];
+                if (i == r)
+                {
+                    textBox1.Text = n.GetNazivRecepta();
+                    textBox2.Text = n.GetRecept();
+                    comboBox1.Text = n.GetTipJela();
+                    for (int j = 0; j < sastojak.Count; j++)
+                    {
+                        listBox2.Items.Add(sastojak[j]);
+                    }
+                }
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Edit f = new Edit(textBox1.Text, textBox2.Text, comboBox1.Text, listBox1.SelectedIndex);
+            f.Show();
+            this.Hide();
         }
     }
 }

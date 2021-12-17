@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Recept1._0
 {
-    class Class1
+    public class Class1
     {
         private string NazivRecepta;
         private string Recept;
@@ -58,11 +58,11 @@ namespace Recept1._0
         {
             Sastojak = s;
         }
-        public Class1(List<string> s, int c)
+        public Class1(List<Class1> s, int c)
         {
 
         }
-        public Class1(string nr, string tj, string r, List<string> s)
+        public Class1(string nr, string tj, List<string> s, string r)
         {
             NazivRecepta = nr;
             TipJela = tj;

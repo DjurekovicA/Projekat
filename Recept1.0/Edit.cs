@@ -12,35 +12,52 @@ namespace Recept1._0
 {
     public partial class Edit : Form
     {
-        List<string> Recept = new List<string>();
+        List<Class1> Recept = new List<Class1>();
         List<Class1> Class1 = new List<Class1>();
+        string Naz;
+        string Tip;
+        string Rec;
         int N;
-        public Edit(List<string> recept, int n)
+        public Edit(string naz, string tip, string rec, int n)
         {
-            Recept = recept;
+            Naz = naz;
+            Tip = tip;
+            Rec = rec;
             N = n;
             InitializeComponent();
         }
 
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnNazad_Click_1(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+            this.Hide();
+        }
+
         // " Izmeni recept "
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
 
         }
 
         // " + "
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
 
         // " - "
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void Edit_Load(object sender, EventArgs e)
+        private void Edit_Load_1(object sender, EventArgs e)
         {
             Class1 c = new Class1(Recept, 1);
 
@@ -48,24 +65,12 @@ namespace Recept1._0
             {
                 if (i == N)
                 {
-                    textBox1.Text = c.GetNazivRecepta();
-                    textBox2.Text = c.GetRecept();
-                    comboBox1.Text = c.GetTipJela();
+                    textBox1.Text = Naz;
+                    textBox2.Text = Rec;
+                    comboBox1.Text = Tip;
                     listBox2.Items.Add(c.GetSastojak());
                 }
             }
-        }
-
-        private void btnNazad_Click(object sender, EventArgs e)
-        {
-            Form1 f = new Form1();
-            f.Show();
-            this.Hide();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

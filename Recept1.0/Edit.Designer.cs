@@ -54,6 +54,7 @@
             this.btnNazad.Size = new System.Drawing.Size(130, 60);
             this.btnNazad.TabIndex = 8;
             this.btnNazad.Text = "Nazad na početak";
+            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click_1);
             // 
             // btnExit
             // 
@@ -63,6 +64,7 @@
             this.btnExit.Size = new System.Drawing.Size(50, 50);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "X";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // label1
             // 
@@ -124,6 +126,7 @@
             this.button1.Size = new System.Drawing.Size(43, 40);
             this.button1.TabIndex = 4;
             this.button1.Text = "+";
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -133,6 +136,7 @@
             this.button2.Size = new System.Drawing.Size(43, 40);
             this.button2.TabIndex = 7;
             this.button2.Text = "-";
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label4
             // 
@@ -170,6 +174,7 @@
             this.button3.Size = new System.Drawing.Size(235, 46);
             this.button3.TabIndex = 7;
             this.button3.Text = "Izmeni recept";
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // textBox3
             // 
@@ -224,8 +229,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Edit_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

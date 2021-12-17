@@ -67,6 +67,9 @@
     <Compile Include="Recepti.Designer.cs">
       <DependentUpon>Recepti.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
