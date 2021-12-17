@@ -12,7 +12,7 @@ namespace Recept1._0
         private string Recept;
         private string TipJela;
         private string Sastojci;
-        private List<string> Sastojak = new List<string>();
+        private List<string> Sastojak;
         public string GetNazivRecepta()
         {
             return NazivRecepta;
@@ -53,14 +53,9 @@ namespace Recept1._0
         {
             Sastojak = a;
         }
-        public Class1() { }
         public Class1(List<string> s)
         {
             Sastojak = s;
-        }
-        public Class1(List<Class1> s, int c)
-        {
-
         }
         public Class1(string nr, string tj, List<string> s, string r)
         {

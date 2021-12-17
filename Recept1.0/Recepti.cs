@@ -85,6 +85,8 @@ namespace Recept1._0
             string NazivJela = textBox1.Text;
             string TipJela = comboBox1.Text;
             string Recept = textBox2.Text;
+            string Sastojak = textBox3.Text;
+            List<string> ss = new List<string>(sastojak);
 
             if (NaziviJela.Contains(NazivJela))
             {
@@ -97,10 +99,10 @@ namespace Recept1._0
                 return;
             }
 
-            NaziviJela.Add(NazivJela);
             Class1 c = new Class1(NazivJela, TipJela, sastojak, Recept);
             recept.Add(c);
             listBox1.Items.Add(c.ToString());
+            NaziviJela.Add(NazivJela);
             c.SetNazivRecepta(NazivJela);
             c.SetTipJelaa(TipJela);
             c.SetRecept(Recept);
