@@ -23,6 +23,7 @@ namespace Recept1._0
 
         //dodavanje sastojka
         private void button1_Click(object sender, EventArgs e)
+        
         {
             if (sastojak.Contains(textBox3.Text)) {
                 MessageBox.Show("Već ste dodali ovaj sastojak");
@@ -39,13 +40,6 @@ namespace Recept1._0
             class1.SetSastojak(sastojak);
 
             textBox3.Text = "";
-        }
-
-        private void btnNazad_Click(object sender, EventArgs e)
-        {
-            Form1 f = new Form1();
-            f.Show();
-            this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -91,14 +85,17 @@ namespace Recept1._0
         }// " - "
         private void button2_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < listBox2.Items.Count; i++)
-            {
-                if (i == listBox2.SelectedIndex)
+            if (listBox2.SelectedIndex != 0) {
+                for (int i = 0; i < listBox2.Items.Count; i++)
                 {
-                    listBox2.Items.Clear();
-                    sastojak.RemoveAt(listBox2.SelectedIndex);
-                    for(int j = 0; j < sastojak.Count; j++) { 
-                        listBox2.Items.Add(sastojak[j]);
+                    if (i == listBox2.SelectedIndex)
+                    {
+                        sastojak.RemoveAt(listBox2.SelectedIndex);
+                        listBox2.Items.Clear();
+                        for (int j = 0; j < sastojak.Count; j++)
+                        {
+                            listBox2.Items.Add(sastojak[j]);
+                        }
                     }
                 }
             }
@@ -113,6 +110,14 @@ namespace Recept1._0
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             button4.Show();
+            button5.Show();
+            button6.Show();
+            listBox2.Items.Clear();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            listBox2.Text = "";
+            comboBox1.Text = "";
 
             int r = listBox1.SelectedIndex;
             for (int i = 0; i < recept.Count; i++)
@@ -136,6 +141,35 @@ namespace Recept1._0
             Edit f = new Edit(textBox1.Text, textBox2.Text, comboBox1.Text, sastojak, listBox1.SelectedIndex);
             f.Show();
             this.Hide();
+        }
+        
+        // " obrisi "
+        private void button5_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < recept.Count; i++) {
+                if (i == listBox1.SelectedIndex) {
+                    recept.RemoveAt(i);
+                    listBox1.Items.Clear();
+                }
+                for (int j = 0; j < recept.Count; j++) {
+                    listBox2.Items.Add(sastojak[j]);
+                }
+            }
+        }
+
+        // " odustani "
+        private void button6_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            comboBox1.Text = "";
+            for (int i = 0; i < recept.Count; i++) {
+                listBox1.Items.Add(recept[i]);
+            }
+
         }
     }
 }

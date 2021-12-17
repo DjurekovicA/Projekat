@@ -34,13 +34,6 @@ namespace Recept1._0
             Application.Exit();
         }
 
-        private void btnNazad_Click_1(object sender, EventArgs e)
-        {
-            Form1 f = new Form1();
-            f.Show();
-            this.Hide();
-        }
-
         // " Izmeni recept "
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -73,6 +66,11 @@ namespace Recept1._0
                     listBox2.Items.Add(Sas[N]);
                 }
             }
+        }
+
+        private void btnNazad_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

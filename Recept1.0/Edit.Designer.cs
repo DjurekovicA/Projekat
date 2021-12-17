@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNazad = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,17 +43,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.btnNazad = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnNazad
-            // 
-            this.btnNazad.Location = new System.Drawing.Point(10, 440);
-            this.btnNazad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNazad.Name = "btnNazad";
-            this.btnNazad.Size = new System.Drawing.Size(130, 60);
-            this.btnNazad.TabIndex = 8;
-            this.btnNazad.Text = "Nazad na početak";
-            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click_1);
             // 
             // btnExit
             // 
@@ -204,6 +194,16 @@
             this.listBox2.Size = new System.Drawing.Size(234, 64);
             this.listBox2.TabIndex = 14;
             // 
+            // btnNazad
+            // 
+            this.btnNazad.Location = new System.Drawing.Point(10, 440);
+            this.btnNazad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNazad.Name = "btnNazad";
+            this.btnNazad.Size = new System.Drawing.Size(130, 60);
+            this.btnNazad.TabIndex = 8;
+            this.btnNazad.Text = "Nazad na početak";
+            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click_1);
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -236,7 +236,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnNazad;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -252,5 +251,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button btnNazad;
     }
 }
