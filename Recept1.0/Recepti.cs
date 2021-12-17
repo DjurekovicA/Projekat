@@ -138,9 +138,21 @@ namespace Recept1._0
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Edit f = new Edit(textBox1.Text, textBox2.Text, comboBox1.Text, sastojak, listBox1.SelectedIndex);
-            f.Show();
-            this.Hide();
+            string NazivJela = textBox1.Text;
+            string TipJela = comboBox1.Text;
+            string Recept = textBox2.Text;
+            Class1 c = new Class1(NazivJela, TipJela, sastojak, Recept);
+
+            for (int i = 0; i < recept.Count; i++) {
+                NaziviJela.RemoveAt(listBox1.SelectedIndex);
+                NaziviJela.Add(NazivJela);
+            }
+            NazivJela = textBox1.Text;
+
+            c.SetNazivRecepta(NazivJela);
+            c.SetTipJelaa(TipJela);
+            c.SetRecept(Recept);
+            c.SetSastojak(sastojak);
         }
         
         // " obrisi "
