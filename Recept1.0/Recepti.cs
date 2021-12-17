@@ -50,34 +50,7 @@ namespace Recept1._0
         //dodavanje recepta
         private void button3_Click(object sender, EventArgs e)
         {
-            string NazivJela = textBox1.Text;
-            string TipJela = comboBox1.Text;
-            string Recept = textBox2.Text;
-
-            if (NaziviJela.Contains(NazivJela))
-            {
-                MessageBox.Show("Imate već recept sa tim imenom");
-                return;
-            }
-            if (sastojak.Count < 3)
-            {
-                MessageBox.Show("Morate imati bar 3 sastojka");
-                return;
-            }
-
-            NaziviJela.Add(NazivJela);
-            Class1 c = new Class1(NazivJela, TipJela, sastojak, Recept);
-            recept.Add(c);
-            listBox1.Items.Add(c.ToString());
-            c.SetNazivRecepta(NazivJela);
-            c.SetTipJelaa(TipJela);
-            c.SetRecept(Recept);
-            c.SetSastojak(sastojak);
-
-            textBox1.Text = "";
-            textBox2.Text = "";
-            comboBox1.Text = "";
-            listBox2.Items.Clear();
+            Dodaj();
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -107,6 +80,37 @@ namespace Recept1._0
         }
 
         //prikaz recepta
+        public void Dodaj()
+        {
+            string NazivJela = textBox1.Text;
+            string TipJela = comboBox1.Text;
+            string Recept = textBox2.Text;
+
+            if (NaziviJela.Contains(NazivJela))
+            {
+                MessageBox.Show("Imate već recept sa tim imenom");
+                return;
+            }
+            if (sastojak.Count < 3)
+            {
+                MessageBox.Show("Morate imati bar 3 sastojka");
+                return;
+            }
+
+            NaziviJela.Add(NazivJela);
+            Class1 c = new Class1(NazivJela, TipJela, sastojak, Recept);
+            recept.Add(c);
+            listBox1.Items.Add(c.ToString());
+            c.SetNazivRecepta(NazivJela);
+            c.SetTipJelaa(TipJela);
+            c.SetRecept(Recept);
+            c.SetSastojak(sastojak);
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+            comboBox1.Text = "";
+            listBox2.Items.Clear();
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             button4.Show();
@@ -136,6 +140,7 @@ namespace Recept1._0
             }
         }
 
+        // " izmeni " 
         private void button4_Click_1(object sender, EventArgs e)
         {
             string NazivJela = textBox1.Text;
@@ -144,15 +149,25 @@ namespace Recept1._0
             Class1 c = new Class1(NazivJela, TipJela, sastojak, Recept);
 
             for (int i = 0; i < recept.Count; i++) {
-                NaziviJela.RemoveAt(listBox1.SelectedIndex);
-                NaziviJela.Add(NazivJela);
+                if (i==listBox1.SelectedIndex) {
+                    c.SetNazivRecepta("");
+                    c.SetTipJelaa("");
+                    c.SetRecept("");
+                    recept.RemoveAt(listBox1.SelectedIndex);
+                    c.SetSastojak(new List<string>());
+                    Dodaj();
+                    //c.SetNazivRecepta(NazivJela);
+                    listBox1.Items.Clear();
+                    for (int j = 0; j < recept.Count; j++)
+                        listBox1.Items.Add(recept[j]);
+                }
             }
-            NazivJela = textBox1.Text;
 
-            c.SetNazivRecepta(NazivJela);
-            c.SetTipJelaa(TipJela);
-            c.SetRecept(Recept);
-            c.SetSastojak(sastojak);
+            listBox2.Items.Clear();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            comboBox1.Text = "";
         }
         
         // " obrisi "
@@ -164,9 +179,14 @@ namespace Recept1._0
                     listBox1.Items.Clear();
                 }
                 for (int j = 0; j < recept.Count; j++) {
-                    listBox2.Items.Add(sastojak[j]);
+                    listBox1.Items.Add(recept[j]);
                 }
             }
+            listBox2.Items.Clear();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            comboBox1.Text = "";
         }
 
         // " odustani "
