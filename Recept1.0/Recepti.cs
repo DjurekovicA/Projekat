@@ -24,7 +24,7 @@ namespace Recept1._0
         //dodavanje sastojka
         private void button1_Click(object sender, EventArgs e)
         {
-            if (NaziviJela.Contains(textBox3.Text)) {
+            if (sastojak.Contains(textBox3.Text)) {
                 MessageBox.Show("Već ste dodali ovaj sastojak");
                 textBox3.Text = "";
                 return;
@@ -34,9 +34,8 @@ namespace Recept1._0
                 return;
 
             string s = textBox3.Text.ToLower();
-            NaziviJela.Add(s);
-            listBox2.Items.Add(s);
             sastojak.Add(s);
+            listBox2.Items.Add(s);
             class1.SetSastojak(sastojak);
 
             textBox3.Text = "";
@@ -85,15 +84,24 @@ namespace Recept1._0
             textBox2.Text = "";
             comboBox1.Text = "";
             listBox2.Items.Clear();
-            sastojak = new List<string>();
         }
         private void button4_Click(object sender, EventArgs e)
         {
             
-        }
+        }// " - "
         private void button2_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < listBox2.Items.Count; i++)
+            {
+                if (i == listBox2.SelectedIndex)
+                {
+                    listBox2.Items.Clear();
+                    sastojak.RemoveAt(listBox2.SelectedIndex);
+                    for(int j = 0; j < sastojak.Count; j++) { 
+                        listBox2.Items.Add(sastojak[j]);
+                    }
+                }
+            }
         }
 
         private void Recepti_Load(object sender, EventArgs e)
@@ -101,6 +109,7 @@ namespace Recept1._0
 
         }
 
+        //prikaz recepta
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             button4.Show();
@@ -124,7 +133,7 @@ namespace Recept1._0
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Edit f = new Edit(textBox1.Text, textBox2.Text, comboBox1.Text, listBox1.SelectedIndex);
+            Edit f = new Edit(textBox1.Text, textBox2.Text, comboBox1.Text, sastojak, listBox1.SelectedIndex);
             f.Show();
             this.Hide();
         }

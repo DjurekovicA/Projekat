@@ -14,15 +14,17 @@ namespace Recept1._0
     {
         List<Class1> Recept = new List<Class1>();
         List<Class1> Class1 = new List<Class1>();
+        List<string> Sas;
         string Naz;
         string Tip;
         string Rec;
         int N;
-        public Edit(string naz, string tip, string rec, int n)
+        public Edit(string naz, string tip, string rec, List<string> sas, int n)
         {
             Naz = naz;
             Tip = tip;
             Rec = rec;
+            Sas = sas;
             N = n;
             InitializeComponent();
         }
@@ -68,7 +70,7 @@ namespace Recept1._0
                     textBox1.Text = Naz;
                     textBox2.Text = Rec;
                     comboBox1.Text = Tip;
-                    listBox2.Items.Add(c.GetSastojak());
+                    listBox2.Items.Add(Sas[N]);
                 }
             }
         }

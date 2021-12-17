@@ -214,6 +214,7 @@
             this.button4.Size = new System.Drawing.Size(91, 46);
             this.button4.TabIndex = 15;
             this.button4.Text = "Edit";
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // Recepti
